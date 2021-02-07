@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootContentProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContentProvider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ContentProvider. Work with Google Drive and Dropbox"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <Button
+            android:id="@+id/btnChooseFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Choose File"
+            app:layout_constraintEnd_toStartOf="@+id/btnCreateFileOnCloud"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentProvider" />
+
+        <Button
+            android:id="@+id/btnCreateFileOnCloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Create File"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentProvider" />
+
+        <Button
+            android:id="@+id/btnDeleteFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Delete File"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnCreateFileOnCloud"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentProvider" />
+
+        <Button
+            android:id="@+id/btnReadFileContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Read File"
+            app:layout_constraintEnd_toStartOf="@+id/btnWriteFileToContent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnChooseFile" />
+
+        <Button
+            android:id="@+id/btnWriteFileToContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Write To File"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCreateFileOnCloud" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootInternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/rootContentProvider">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInternalStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Work with Internal Storage"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <Button
+            android:id="@+id/btnReadIntStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Read From Int. Storage"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInternalStorage" />
+
+        <Button
+            android:id="@+id/btnCreateNestedDirectory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Create Nested Directory"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnReadIntStorage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInternalStorage" />
+
+        <Button
+            android:id="@+id/btnWriteIntStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Write To Int. Storage"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnReadIntStorage"
+            app:layout_constraintTop_toBottomOf="@+id/tvInternalStorage" />
+
+        <Button
+            android:id="@+id/btnCreateCache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Create Cache"
+            app:layout_constraintEnd_toStartOf="@+id/btnDeleteCache"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWriteIntStorage" />
+
+        <Button
+            android:id="@+id/btnDeleteCache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Delete Cache"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCreateNestedDirectory" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootExternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/rootInternalStorage">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvExternalStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Work with External Storage"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <Button
+            android:id="@+id/btnIsStorageRW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Storage Writable"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExternalStorage" />
+
+        <Button
+            android:id="@+id/btnIsStorageR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Storage Readable"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnIsStorageRW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExternalStorage" />
+
+        <Button
+            android:id="@+id/btnStorageAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Storage Available"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnIsStorageRW"
+            app:layout_constraintTop_toBottomOf="@+id/tvExternalStorage" />
+
+        <Button
+            android:id="@+id/btnAccessFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Access File"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnIsStorageRW" />
+
+        <Button
+            android:id="@+id/btnCreateCacheFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Create Cache File"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnAccessFile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnIsStorageR" />
+
+        <Button
+            android:id="@+id/btnDeleteCacheFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Delete Cache File"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAccessFile"
+            app:layout_constraintTop_toBottomOf="@+id/btnStorageAvailable" />
+
+        <Button
+            android:id="@+id/btnQueryFreeSpace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Free Space"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAccessFile" />
+
+        <Button
+            android:id="@+id/btnWriteFileExternalStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Write File to External Storage"
+            android:textSize="7sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnQueryFreeSpace"
+            app:layout_constraintTop_toBottomOf="@+id/btnDeleteCacheFile" />
+
+        <Button
+            android:id="@+id/btnGetRoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="GetRoot"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnQueryFreeSpace" />
+
+        <Button
+            android:id="@+id/btnReadBytesFromUri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Read Bytes From Uri"
+            android:textSize="7sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnQueryFreeSpace"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCreateCacheFile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootPublicDirectory"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/holo_blue_dark"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/rootExternalStorage">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPublicDirectory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Work with Public Directory"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatTextView>
+
+        <Button
+            android:id="@+id/btnWriteToPublicDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Write To Public Download"
+            android:textSize="7sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPublicDirectory" />
+
+        <Button
+            android:id="@+id/btnDeleteDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:text="Delete Document"
+            android:textSize="7sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnWriteToPublicDownload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPublicDirectory" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvFileContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rootPublicDirectory">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
